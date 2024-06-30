@@ -1,38 +1,27 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void Index(int Arr[], int iLength, int no)
+void Range(int Arr[], int iLength, int Start,int End)
 {
     int i=0;
-    int FirstIndex=-1;
    
-    for(i=iLength;i>0;i--)
+    for(i=0;i<iLength;i++)
     {
-        if(Arr[i]==no)
+        if((Arr[i]>Start) &&(Arr[i]<End))
         {
-            FirstIndex=i;
-            
+            printf("%d\t",Arr[i]);   
         }
-       
-    }
-    if(FirstIndex!=-1)
-    {
-        printf("First occurance index %d\n",FirstIndex);
-    }
-
-    else{
-        printf("Number not found\n");
-    }
-
-    
+    }  
 }
 int main()
 {
     int iSize = 0;
+    int iStart=0;
+    int iEnd=0;
   
     int iCnt = 0;
     int *p = NULL;
-    int iValue=0;
+   
 
     printf("enetr the number of elements ");
     scanf("%d", &iSize);
@@ -49,10 +38,13 @@ int main()
         printf("enter element=");
         scanf("%d", &p[iCnt]);
     }
-    printf("enter the element to find First occurance ");
-    scanf("%d",&iValue);
-    Index (p, iSize,iValue);
-    
+    printf("enter the Start range ");
+    scanf("%d",&iStart);
+
+    printf("enter the end range");
+    scanf("%d",&iEnd);
+
+    Range (p, iSize,iStart,iEnd);
     
     free(p);
 

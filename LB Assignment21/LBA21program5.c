@@ -1,38 +1,28 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void Index(int Arr[], int iLength, int no)
+int OddMul(int Arr[], int iLength)
 {
     int i=0;
-    int FirstIndex=-1;
+    int product=1;
    
-    for(i=iLength;i>0;i--)
+    for(i=0;i<iLength;i++)
     {
-        if(Arr[i]==no)
+        if(Arr[i]%2!=0)
         {
-            FirstIndex=i;
-            
+            product=product*Arr[i];  
         }
-       
-    }
-    if(FirstIndex!=-1)
-    {
-        printf("First occurance index %d\n",FirstIndex);
-    }
-
-    else{
-        printf("Number not found\n");
-    }
-
-    
+    } 
+    return product; 
 }
 int main()
 {
     int iSize = 0;
-  
+    int iRet=0;
+   
     int iCnt = 0;
     int *p = NULL;
-    int iValue=0;
+   
 
     printf("enetr the number of elements ");
     scanf("%d", &iSize);
@@ -49,10 +39,10 @@ int main()
         printf("enter element=");
         scanf("%d", &p[iCnt]);
     }
-    printf("enter the element to find First occurance ");
-    scanf("%d",&iValue);
-    Index (p, iSize,iValue);
-    
+   
+
+    iRet=OddMul(p, iSize);
+    printf("product of elements is %d",iRet);
     
     free(p);
 

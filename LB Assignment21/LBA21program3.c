@@ -4,20 +4,20 @@
 void Index(int Arr[], int iLength, int no)
 {
     int i=0;
-    int FirstIndex=-1;
+    int lastIndex=-1;
    
-    for(i=iLength;i>0;i--)
+    for(i=0;i<iLength;i++)
     {
         if(Arr[i]==no)
         {
-            FirstIndex=i;
+            lastIndex=i;
             
         }
        
     }
-    if(FirstIndex!=-1)
+    if(lastIndex!=-1)
     {
-        printf("First occurance index %d\n",FirstIndex);
+        printf("Last occurance index %d\n",lastIndex);
     }
 
     else{
@@ -49,7 +49,7 @@ int main()
         printf("enter element=");
         scanf("%d", &p[iCnt]);
     }
-    printf("enter the element to find First occurance ");
+    printf("enter the element to find last occurance ");
     scanf("%d",&iValue);
     Index (p, iSize,iValue);
     
